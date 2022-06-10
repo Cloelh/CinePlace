@@ -1,37 +1,40 @@
 {
-    "cinema": [
-        { 
-            "id": 1, 
-            "name": "UGC Ciné cité Lille", 
-            "image": "lille_ugc_cine_cite", 
-            "localisation": {
-                "adress":"40 Rue de Béthune",
-                "CP":"59800",
-                "city":"Lille",
-                "coord":"50.635243341396816, 3.063838733527209"
-            } 
-        },
-        { 
-            "id": 2,
-            "name": "Le Majestic", 
-            "image": "lille_le_majestic", 
-            "localisation": {
-                "adress":"54 Rue de Béthune", 
-                "CP":"59800",
-                "city":"Lille",
-                "coord":"50.6351894328231, 3.0620360783670666"
-            } 
-        },
-        { 
-            "id": 3,
-            "name": "Kinepolis", 
-            "image": "lille_kinepolis", 
-            "localisation": {
-                "adress":"1 Rue du Château d'Isenghien", 
-                "CP":"59160",
-                "city":"Lomme",
-                "coord":"50.65932142384792, 2.983358827607385"
-            } 
-        }
-    ]
-  }
+  "cinema": [
+    {
+      "id": 1,
+      "name": "UGC Ciné cité Lille",
+      "image": "lille_ugc_cine_cite",
+      "localisation": {
+        "adress": "40 Rue de Béthune",
+        "CP": "59800",
+        "city": "Lille",
+        "coord": "50.635243341396816, 3.063838733527209"
+      },
+      "fav": false
+    },
+    {
+      "id": 2,
+      "name": "Le Majestic",
+      "image": "lille_le_majestic",
+      "localisation": {
+        "adress": "54 Rue de Béthune",
+        "CP": "59800",
+        "city": "Lille",
+        "coord": "50.6351894328231, 3.0620360783670666"
+      },
+      "fav": false
+    },
+    {
+      "id": 3,
+      "name": "Kinepolis",
+      "image": "lille_kinepolis",
+      "localisation": {
+        "adress": "1 Rue du Château d'Isenghien",
+        "CP": "59160",
+        "city": "Lomme",
+        "coord": "50.65932142384792, 2.983358827607385"
+      },
+      "fav": false
+    }
+  ]
+}

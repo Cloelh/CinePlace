@@ -25,5 +25,19 @@
         cinema.localisation.adress }}
       </div>
     </ion-card-content>
+    <ion-item>
+      <div>
+        <ion-button (click)="fav(cinema.id)">
+          Favoris
+          <ion-icon
+            *ngIf="cinema.fav; else noFav"
+            name="checkmark-done-outline"
+          ></ion-icon>
+          <ng-template #noFav>
+            <ion-icon name="heart-outline"></ion-icon
+          ></ng-template>
+        </ion-button>
+      </div>
+    </ion-item>
   </ion-card>
 </ion-content>

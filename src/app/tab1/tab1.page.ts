@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Cinema } from '../model/cinema';
 import { DataService } from '../services/data.service';
 
@@ -10,15 +11,26 @@ import { DataService } from '../services/data.service';
 export class Tab1Page implements OnInit {
   public allCinemas: Cinema[] = [];
 
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService, public router: Router) {}
 
   ngOnInit() {
     this.initData();
   }
 
-  public initData() {
+  public initData(): any {
     this.dataService.getAllCinema().subscribe((__cinema: Cinema[]) => {
       this.allCinemas = __cinema;
+    });
+  }
+
+  public fav(id: number) {
+    this.dataService.getCinemaById(id).subscribe((_cinema: Cinema) => {
+      if (_cinema.fav) {
+        _cinema.fav = false;
+      } else {
+        _cinema.fav = true;
+      }
+      this.dataService.putCinema(id, _cinema).subscribe();
     });
   }
 }

@@ -3,6 +3,7 @@ export interface Cinema {
   name?: string;
   image?: string;
   localisation?: Localisation;
+  fav?: boolean;
 }
 
 export interface Localisation {

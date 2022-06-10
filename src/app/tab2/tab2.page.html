@@ -1,17 +1,32 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <img src="assets/svg/logo.svg" width="30px" />
+    <ion-title> Mes cinémas favoris</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">Mes cinémas favoris</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <div *ngIf="!noFav; else noFav">
+    <ion-card *ngFor="let cinema of allCinemas">
+      <ion-card-header>
+        <ion-card-subtitle>{{ cinema.localisation.city }}</ion-card-subtitle>
+        <ion-card-title>{{ cinema.name }}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <img src="assets/img/{{ cinema.image }}.jpeg" alt="" />
+        <div>
+          <ion-icon name="location-outline"></ion-icon> {{
+          cinema.localisation.adress }}
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <ng-template #noFav> Vous n'avez aucun cinema favoris </ng-template>
 </ion-content>
