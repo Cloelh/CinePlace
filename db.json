@@ -1,0 +1,22 @@
+{
+    "cinema": [
+        { 
+            "id": 1, 
+            "nom": "UGC Ciné cité Lille", 
+            "image": "lille_ugc_cine_cite", 
+            "localisation": {
+                "adress":"40 Rue de Béthune, 59800 Lille", 
+                "coord":"50.635243341396816, 3.063838733527209"
+            } 
+        },
+        { 
+            "id": 2,
+            "nom": "Le Majestic", 
+            "image": "lille_le_majestic", 
+            "localisation": {
+                "adress":"54 Rue de Béthune, 59800 Lille", 
+                "coord":"50.6351894328231, 3.0620360783670666"
+            } 
+        }
+    ]
+  }
