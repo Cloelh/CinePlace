@@ -19,7 +19,7 @@ export class Tab1Page implements OnInit {
 
   public initData(): any {
     this.dataService.getAllCinema().subscribe((__cinema: Cinema[]) => {
-      this.allCinemas = __cinema;
+      this.allCinemas = this.sort(__cinema);
     });
   }
 
@@ -32,5 +32,20 @@ export class Tab1Page implements OnInit {
       }
       this.dataService.putCinema(id, _cinema).subscribe();
     });
+  }
+
+  // alphabtiq sort
+  public sort(array): Array<Cinema> {
+    array.sort((a: any, b: any) => {
+      console.log(a);
+      if (a.name < b.name) {
+        return -1;
+      } else if (a.name > b.name) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+    return array;
   }
 }
