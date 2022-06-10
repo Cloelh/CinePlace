@@ -37,7 +37,6 @@ export class Tab1Page implements OnInit {
   // alphabtiq sort
   public sort(array): Array<Cinema> {
     array.sort((a: any, b: any) => {
-      console.log(a);
       if (a.name < b.name) {
         return -1;
       } else if (a.name > b.name) {
