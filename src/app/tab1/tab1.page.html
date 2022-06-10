@@ -1,17 +1,29 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+    <img src="assets/svg/logo.svg" width="30px" />
+    <ion-title> Tous les cinemas</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">Accueil</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-card *ngFor="let cinema of allCinemas">
+    <ion-card-header>
+      <ion-card-subtitle>{{ cinema.localisation.city }}</ion-card-subtitle>
+      <ion-card-title>{{ cinema.name }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <img src="assets/img/{{ cinema.image }}.jpeg" alt="" />
+      <div>
+        <ion-icon name="location-outline"></ion-icon> {{
+        cinema.localisation.adress }}
+      </div>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
