@@ -31,6 +31,7 @@ export class Tab1Page implements OnInit {
         _cinema.fav = true;
       }
       this.dataService.putCinema(id, _cinema).subscribe();
+      window.location.reload();
     });
   }
 
