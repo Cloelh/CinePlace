@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 
 import { DataService } from './services/data.service';
 import { HttpClientModule } from '@angular/common/http';
+import { Geolocation } from '@awesome-cordova-plugins/geolocation/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     DataService,
+    Geolocation,
   ],
   bootstrap: [AppComponent],
 })

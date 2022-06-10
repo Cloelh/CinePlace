@@ -2,6 +2,7 @@ import { Component, OnChanges, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Cinema } from '../model/cinema';
 import { DataService } from '../services/data.service';
+import { Geolocation } from '@awesome-cordova-plugins/geolocation/ngx';
 
 @Component({
   selector: 'app-tab1',
@@ -10,11 +11,17 @@ import { DataService } from '../services/data.service';
 })
 export class Tab1Page implements OnInit {
   public allCinemas: Cinema[] = [];
+  public coord;
 
-  constructor(private dataService: DataService, public router: Router) {}
+  constructor(
+    private dataService: DataService,
+    public router: Router,
+    public geolocation: Geolocation
+  ) {}
 
   ngOnInit() {
     this.initData();
+    this.geoloc();
   }
 
   public initData(): any {
@@ -47,5 +54,11 @@ export class Tab1Page implements OnInit {
       }
     });
     return array;
+  }
+
+  public geoloc() {
+    this.geolocation.getCurrentPosition().then((resp) => {
+      this.coord = resp;
+    });
   }
 }
