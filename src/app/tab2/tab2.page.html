@@ -12,7 +12,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <div *ngIf="!noFav; else noFav">
+  <div *ngIf="this.allCinemas.length !== 0; else noFav">
     <ion-card *ngFor="let cinema of allCinemas">
       <ion-card-header>
         <ion-card-subtitle>{{ cinema.localisation.city }}</ion-card-subtitle>

@@ -24,7 +24,6 @@ export class Tab2Page {
           this.allCinemas.push(_cinema);
         }
       });
-      this.noFav = this.allCinemas.length === 0;
     });
   }
 }
